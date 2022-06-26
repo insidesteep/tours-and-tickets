@@ -64,7 +64,7 @@
         style="width: 3rem; height: 3rem"
         role="status"
       >
-        <span class="sr-only">Loading...</span>
+        <span class="sr-only">Загрузка...</span>
       </div>
     </div>
     <!-- Spinner End -->
@@ -125,9 +125,7 @@
         class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
       >
         <a href="" class="navbar-brand p-0">
-          <h1 class="text-primary m-0">
-            <i class="fa fa-map-marker-alt me-3"></i>Tourist
-          </h1>
+          <h1 class="text-primary m-0 mx-2">Tours & Tickets</h1>
           <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button
@@ -197,7 +195,7 @@
     <div class="container-xxl py-5">
       <div class="container">
         <div class="row gx-5">
-          <div class="col-8">
+          <div class="col-lg-8">
             <div class="mb-5 wow fadeInUp" data-wow-delay="0.1s">
               <div
                 class="tour-detail__head d-flex align-items-center justify-content-between mb-2"
@@ -212,31 +210,29 @@
                 </div>
               </div>
               <hr />
-              <div
-                class="tour-detail__info d-flex justify-content-between align-items-center"
-              >
-                <div class="tour-detail__info-item">
+              <div class="tour-detail__info row">
+                <div class="tour-detail__info-item col-6 col-md-3">
                   <i class="fa fa-clock text-primary me-2"></i>
                   <div>
                     <h6>Duration</h6>
                     <span>3 Days</span>
                   </div>
                 </div>
-                <div class="tour-detail__info-item">
+                <div class="tour-detail__info-item col-6 col-md-3">
                   <i class="fa fa-car text-primary me-2"></i>
                   <div>
                     <h6>Tour Type</h6>
                     <span>Daily Tour</span>
                   </div>
                 </div>
-                <div class="tour-detail__info-item">
+                <div class="tour-detail__info-item col-6 col-md-3">
                   <i class="fa fa-users text-primary me-2"></i>
                   <div>
                     <h6>Group Size</h6>
                     <span>6 People </span>
                   </div>
                 </div>
-                <div class="tour-detail__info-item">
+                <div class="tour-detail__info-item col-6 col-md-3">
                   <i class="fa fa-globe text-primary me-2"></i>
                   <div>
                     <h6>Languages</h6>
@@ -270,16 +266,16 @@
                 </h4>
 
                 <div class="row">
-                  <div class="col-6">
-                    <ul class="includes">
+                  <div class="col-sm-6">
+                    <ul class="includes mb-3">
                       <li>Specialized bilingual guide</li>
                       <li>Specialized bilingual guide</li>
                       <li>Specialized bilingual guide</li>
                       <li>Specialized bilingual guide</li>
                     </ul>
                   </div>
-                  <div class="col-6">
-                    <ul class="excludes">
+                  <div class="col-sm-6">
+                    <ul class="excludes mb-3">
                       <li>Specialized bilingual guide</li>
                       <li>Specialized bilingual guide</li>
                       <li>Specialized bilingual guide</li>
@@ -471,7 +467,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-lg-4">
             <div
               class="card shadow-lg mb-5 bg-body rounded tour-detail__booking-card"
             >
@@ -578,127 +574,63 @@
     >
       <div class="container py-5">
         <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-white mb-3">Company</h4>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Privacy Policy</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">FAQs & Help</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-white mb-3">Contact</h4>
-            <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+012 345 67890
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>info@example.com
-            </p>
-            <div class="d-flex pt-2">
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-white mb-3">Gallery</h4>
-            <div class="row g-2 pt-2">
+          <div class="col-md-6">
+            <h4 class="text-white mb-3">Меню</h4>
+            <div class="row">
               <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-1.jpg"
-                  alt=""
-                />
+                <a class="btn btn-link" href="">Главная</a>
+                <a class="btn btn-link" href="">О нас</a>
               </div>
               <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid bg-light p-1"
-                  src="img/package-1.jpg"
-                  alt=""
-                />
+                <a class="btn btn-link" href="">Услуги</a>
+                <a class="btn btn-link" href="">Туры</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-white mb-3">Newsletter</h4>
-            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-            <div class="position-relative mx-auto" style="max-width: 400px">
-              <input
-                class="form-control border-primary w-100 py-3 ps-4 pe-5"
-                type="text"
-                placeholder="Your email"
-              />
-              <button
-                type="button"
-                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-              >
-                SignUp
-              </button>
+          <div class="col-md-6">
+            <h4 class="text-white mb-3">Контакты</h4>
+            <div class="row">
+              <div class="col-6">
+                <p class="mb-2">
+                  <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York,
+                  USA
+                </p>
+                <p class="mb-2">
+                  <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+                </p>
+              </div>
+              <div class="col-6">
+                <p class="mb-2">
+                  <i class="fa fa-envelope me-3"></i>info@example.com
+                </p>
+                <div class="d-flex pt-2">
+                  <a class="btn btn-outline-light btn-social" href=""
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-social" href=""
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-social" href=""
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-social" href=""
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="copyright">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">Your Site Name</a>, All
-              Right Reserved.
+          <div class="text-center mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All
+            Right Reserved.
 
-              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Designed By
-              <a class="border-bottom" href="https://htmlcodex.com"
-                >HTML Codex</a
-              >
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <div class="footer-menu">
-                <a href="">Home</a>
-                <a href="">Cookies</a>
-                <a href="">Help</a>
-                <a href="">FQAs</a>
-              </div>
-            </div>
+            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+            Designed By
+            <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
           </div>
         </div>
       </div>
