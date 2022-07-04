@@ -58,9 +58,8 @@
         class="spinner-border text-primary"
         style="width: 3rem; height: 3rem"
         role="status"
-      >
-        <span class="sr-only">Loading...</span>
-      </div>
+      ></div>
+      <span class="sr-only">Загрузка...</span>
     </div>
     <!-- Spinner End -->
 
@@ -140,21 +139,25 @@
 
             <a href="contact.html" class="nav-item nav-link">Контакты</a>
           </div>
-          <select class="selectpicker" data-width="fit">
+          <select
+            class="selectpicker"
+            data-width="fit"
+            onchange="location=this.value"
+          >
             <option
               data-content='<span class="flag-icon flag-icon-us"></span> Русский'
             >
-              Русский
+              linkru.com
             </option>
             <option
               data-content="<span class='flag-icon flag-icon-mx'></span> O'zbekcha"
             >
-              O'zbekcha
+              linkuz.com
             </option>
             <option
               data-content='<span class="flag-icon flag-icon-mx"></span> English'
             >
-              English
+              linken.com
             </option>
           </select>
         </div>
@@ -394,7 +397,6 @@
                     style="border-radius: 30px"
                     >Подробнее</a
                   >
-                  >
                 </div>
               </div>
             </div>
@@ -465,7 +467,7 @@
               </p>
             </div>
             <div class="col-md-6">
-              <form>
+              <form id="feedback">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -492,6 +494,18 @@
 
                   <div class="col-12">
                     <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control bg-transparent"
+                        id="phone"
+                        placeholder="Ваша эл.почта"
+                      />
+                      <label for="phone">Номер телефона</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-floating">
                       <textarea
                         class="form-control bg-transparent"
                         placeholder="Special Request"
@@ -503,6 +517,7 @@
                   </div>
                   <div class="col-12">
                     <button
+                      id="submit"
                       class="btn btn-outline-light w-100 py-3"
                       type="submit"
                     >
