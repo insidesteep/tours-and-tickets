@@ -467,7 +467,7 @@
               </p>
             </div>
             <div class="col-md-6">
-              <form id="feedback">
+              <form id="feedback" class="needs-validation" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -476,6 +476,7 @@
                         class="form-control bg-transparent"
                         id="name"
                         placeholder="Ваше имя"
+                        required
                       />
                       <label for="name">Ваше имя</label>
                     </div>
@@ -487,6 +488,7 @@
                         class="form-control bg-transparent"
                         id="email"
                         placeholder="Ваша эл.почта"
+                        required
                       />
                       <label for="email">Ваша эл.почта</label>
                     </div>
@@ -499,6 +501,7 @@
                         class="form-control bg-transparent"
                         id="phone"
                         placeholder="Ваша эл.почта"
+                        required
                       />
                       <label for="phone">Номер телефона</label>
                     </div>
@@ -511,6 +514,7 @@
                         placeholder="Special Request"
                         id="message"
                         style="height: 100px"
+                        required
                       ></textarea>
                       <label for="message">Текст вопроса</label>
                     </div>
@@ -864,6 +868,32 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
     ></a>
+
+    <div class="modal" tabindex="-1" id="result-modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div
+            class="modal-body d-flex flex-column align-items-center justify-content-center p-4"
+          >
+            <div class="icon">
+              <i class="far fa-times"></i>
+              <i class="far fa-check"></i>
+            </div>
+            <h2>Ошибка</h2>
+            <p>Text</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

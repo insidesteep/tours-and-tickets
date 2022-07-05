@@ -87,6 +87,29 @@
 
   // select language
 
+  (function () {
+    "use strict";
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll(".needs-validation");
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+
   const select = document.querySelector(".selectpicker");
   const options = select.options;
   const path = window.location.pathname;
@@ -106,45 +129,136 @@
   // $('.selectpicke').selectpicker();
 
   const feedbackForm = document.querySelector("#feedback");
-  const name = feedbackForm.querySelector("input#name");
-  const email = feedbackForm.querySelector("input#email");
-  const phone = feedbackForm.querySelector("input#phone");
-  const text = feedbackForm.querySelector("textarea#message");
-  const submitButton = feedbackForm.querySelector("button#submit");
+
+  const name = document.querySelector("#feedback input#name");
+
+  const email = document.querySelector("#feedback input#email");
+  const phone = document.querySelector("#feedback input#phone");
+  const text = document.querySelector("#feedback textarea#message");
+  const submitButton = document.querySelector("#feedback button#submit");
+
+  const bookingForm = document.querySelector("#booking");
+  const bName = document.querySelector("#booking input#name");
+  const bEmail = document.querySelector("#booking input#email");
+  const bPhone = document.querySelector("#booking input#phone");
+  const bDate = document.querySelector("#booking input#date");
+  const bSubmitButton = document.querySelector("#booking button#submit");
+  const tourName = document.querySelector(".tour-detail__head-l h1");
+
   const loader = document.querySelector("#spinner");
-  const loaderText = loader.querySelector(".sr-only");
+  const loaderText = document.querySelector("#spinner .sr-only");
 
-  submitButton.addEventListener("click", async (e) => {
-    e.preventDefault();
+  const resultModal = document.querySelector("#result-modal");
+  const resultModalTitle = document.querySelector(
+    "#result-modal .modal-body h2"
+  );
+  const resultModalText = document.querySelector("#result-modal .modal-body p");
+  const resultModalAPI = new bootstrap.Modal(resultModal);
 
-    const formdata = new FormData();
+  resultModal.addEventListener("hide.bs.modal", (e) =>
+    resultModal.classList.remove("error", "success")
+  );
 
-    formdata.append("name", name.value);
-    formdata.append("email", email.value);
-    formdata.append("text", text.value);
-    formdata.append("phone", phone.value);
+  if (submitButton) {
+    submitButton.addEventListener("click", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-    var requestOptions = {
-      method: "POST",
-      body: formdata,
-      redirect: "follow",
-    };
+      if (!feedbackForm.checkValidity()) {
+        feedbackForm.classList.add("was-validated");
+        return;
+      }
 
-    loader.classList.add("show");
-    loaderText.innerText = "Отправка данных...";
-    loaderText.classList.remove("sr-only");
+      const formdata = new FormData();
 
-    const response = await fetch(
-      "https://qayerda.uz/feedback.php",
-      requestOptions
-    );
+      formdata.append("name", name.value);
+      formdata.append("email", email.value);
+      formdata.append("text", text.value);
+      formdata.append("phone", phone.value);
 
-    const data = await response.json();
+      var requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow",
+      };
 
-    alert(data.message);
+      loader.classList.add("show");
+      loaderText.innerText = "Отправка данных...";
+      loaderText.classList.remove("sr-only");
 
-    loader.classList.remove("show");
-    loaderText.innerText = "";
-    loaderText.classList.add("sr-only");
-  });
+      const response = await fetch(
+        "https://qayerda.uz/feedback.php",
+        requestOptions
+      );
+
+      const data = await response.json();
+
+      if (response.status != 200) {
+        resultModal.classList.add("error");
+        resultModalTitle.innerText = "Ошибка";
+      } else {
+        resultModalTitle.innerText = "Успех";
+        resultModal.classList.add("success");
+      }
+
+      resultModalText.innerText = data.message;
+      resultModalAPI.show();
+
+      loader.classList.remove("show");
+      loaderText.innerText = "";
+      loaderText.classList.add("sr-only");
+    });
+  }
+
+  if (bSubmitButton) {
+    bSubmitButton.addEventListener("click", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!bookingForm.checkValidity()) {
+        bookingForm.classList.add("was-validated");
+        return;
+      }
+
+      const formdata = new FormData();
+
+      formdata.append("name", bName.value);
+      formdata.append("email", bEmail.value);
+      formdata.append("phone", bPhone.value);
+      formdata.append("date", bDate.value);
+      formdata.append("tourname", tourName.innerText);
+
+      var requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow",
+      };
+
+      loader.classList.add("show");
+      loaderText.innerText = "Отправка данных...";
+      loaderText.classList.remove("sr-only");
+
+      const response = await fetch(
+        "https://qayerda.uz/booking.php",
+        requestOptions
+      );
+
+      const data = await response.json();
+
+      if (response.status != 200) {
+        resultModal.classList.add("error");
+        resultModalTitle.innerText = "Ошибка";
+      } else {
+        resultModalTitle.innerText = "Успех";
+        resultModal.classList.add("success");
+      }
+
+      resultModalText.innerText = data.message;
+      resultModalAPI.show();
+
+      loader.classList.remove("show");
+      loaderText.innerText = "";
+      loaderText.classList.add("sr-only");
+    });
+  }
 })(jQuery);

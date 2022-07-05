@@ -549,3 +549,41 @@
 .swiper-pagination-bullet {
   background: #86b817;
 }
+
+#result-modal.error .modal-body .icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  color: crimson;
+  border: 2px solid crimson;
+  font-size: 40px;
+  margin-bottom: 1rem;
+}
+
+#result-modal.error .fa-check {
+  display: none;
+}
+
+#result-modal.success .modal-body .icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  color: #86b817;
+  border: 2px solid #86b817;
+  font-size: 40px;
+  margin-bottom: 1rem;
+}
+
+#result-modal i {
+  font-weight: 600;
+}
+
+#result-modal.success .fa-times {
+  display: none;
+}
