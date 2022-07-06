@@ -128,10 +128,10 @@
 
   // $('.selectpicke').selectpicker();
 
+  const menuElements = document.querySelectorAll("#menu a");
+
   const feedbackForm = document.querySelector("#feedback");
-
   const name = document.querySelector("#feedback input#name");
-
   const email = document.querySelector("#feedback input#email");
   const phone = document.querySelector("#feedback input#phone");
   const text = document.querySelector("#feedback textarea#message");
@@ -153,11 +153,13 @@
     "#result-modal .modal-body h2"
   );
   const resultModalText = document.querySelector("#result-modal .modal-body p");
-  const resultModalAPI = new bootstrap.Modal(resultModal);
 
-  resultModal.addEventListener("hide.bs.modal", (e) =>
-    resultModal.classList.remove("error", "success")
-  );
+  if (resultModal) {
+    const resultModalAPI = new bootstrap.Modal(resultModal);
+    resultModal.addEventListener("hide.bs.modal", (e) =>
+      resultModal.classList.remove("error", "success")
+    );
+  }
 
   if (submitButton) {
     submitButton.addEventListener("click", async (e) => {
@@ -261,4 +263,19 @@
       loaderText.classList.add("sr-only");
     });
   }
+
+  const tourMenuItem = Array.from(menuElements).find((item) =>
+    item.href.includes("package")
+  );
+
+  menuElements.forEach((item) => {
+    console.log(item.href, window.location.href);
+    if (item.href == window.location.href) {
+      item.classList.add("active");
+    } else if (window.location.href.includes("tour")) {
+      tourMenuItem.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
 })(jQuery);
